@@ -6,8 +6,7 @@ WORKDIR /app
 
 # Copy the requirements file into the container
 COPY requirements.txt .
-COPY images/ .
-COPY ibdgc-db/ .
+COPY ibdgc-db/ ibdgc-db
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
