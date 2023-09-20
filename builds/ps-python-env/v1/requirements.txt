@@ -59,7 +59,6 @@ gast==0.4.0
 gitdb==4.0.10
 GitPython==3.1.32
 h11==0.14.0
--e git+ssh://git@github.com/ibdgc/ibdgc-db.git@a1a0aeac48f62b45fc69c0d2acb89c6fad6e2e63#egg=ibdgc_db
 idna==3.4
 importlib-metadata==6.8.0
 ipydatagrid==1.1.16
