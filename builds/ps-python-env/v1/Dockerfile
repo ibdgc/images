@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy the requirements file into the container
 COPY requirements.txt .
-COPY ibdgc-db/ .
+COPY /github/workspace/ibdgc-db/ .
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
