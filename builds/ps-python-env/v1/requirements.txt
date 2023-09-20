@@ -144,7 +144,6 @@ pyOpenSSL==23.2.0
 pyreadstat==1.2.0
 pysmb==1.2.9.1
 PySocks==1.7.1
--e git+ssh://git@gitlab.com/phs-rcg/pystata-extensions.git@7184c4de711a0732c7b6dbd9ca7a6c24824889f3#egg=pystata_extensions
 python-dateutil==2.8.2
 python-json-logger==2.0.7
 python-slugify==8.0.1
