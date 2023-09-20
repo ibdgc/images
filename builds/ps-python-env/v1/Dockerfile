@@ -8,7 +8,13 @@ WORKDIR /app
 COPY requirements.txt .
 COPY ibdgc-db/ ibdgc-db
 
-RUN apt-get update && apt-get install git -y --no-install-recommends
+RUN apt-get update && apt-get install \
+  git \
+  python3-dev \
+  graphviz \
+  libgraphviz-dev \
+  pkg-config \
+  -y --no-install-recommends
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
