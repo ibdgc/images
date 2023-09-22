@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   deploy:
-    name: AWS ECR Setup
+    name: Deploy
     runs-on: ubuntu-latest
     environment: production
 
@@ -59,7 +59,7 @@ jobs:
       - name: Clone Private Repo
         uses: actions/checkout@v3
         with:
-          repository: ibdgc/ibdgc-db
+          repository: git@github.com:ibdgc/ibdgc-db.git
           ref: pschumm/reporting
           path: $BUILD_PATH/ibdgc-db
 
