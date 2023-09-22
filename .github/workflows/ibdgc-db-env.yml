@@ -19,7 +19,7 @@ permissions:
 
 jobs:
   deploy:
-    name: Deploy
+    name: AWS ECR Setup
     runs-on: ubuntu-latest
     environment: production
 
@@ -48,6 +48,13 @@ jobs:
     - name: Add SHORT_SHA env property with commit short sha
       run: echo "SHORT_SHA=`echo ${{ github.sha }} | cut -c1-7`" >> $GITHUB_ENV
 
+jobs:
+  clone-branch:
+    name: Clone IBDGC-DB
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
     - name: Configure SSH Key
       run: |
         mkdir -p ~/.ssh
@@ -57,9 +64,19 @@ jobs:
         chmod 644 ~/.ssh/known_hosts
 
     - name: Clone Private Repo
-      run: |
-          git clone git@github.com:ibdgc/ibdgc-db.git $BUILD_PATH/ibdgc-db
+      uses: actions/checkout@v3
+        with:
+          repository: ibdgc/ibdgc-db
+          ref: pschumm/reporting
+          path: $BUILD_PATH/ibdgc-db
 
+jobs:
+  build-and-push:
+    name: Build
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
     - name: Build, tag, and push docker image to Amazon ECR Public
       env:
         REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
