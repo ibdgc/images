@@ -10,7 +10,7 @@ on:
 env:
   AWS_REGION: us-east-1 # set this to your preferred AWS region, e.g. us-west-1
   REGISTRY_ALIAS: chobiolab # aws ecr public alias
-  VER: # version of coreSC
+  VER: v3 # version of coreSC
   REPOSITORY: ibdgc-db-env # aws ecr repo path
   BUILD_PATH: builds/ibdgc-db-env/v3 # dir location of build files in repo
 
@@ -64,5 +64,5 @@ jobs:
         env:
           REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
         run: |
-          docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v2 $BUILD_PATH
-          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:v2
+          docker build -t $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER $BUILD_PATH
+          docker push $REGISTRY/$REGISTRY_ALIAS/$REPOSITORY:$VER
