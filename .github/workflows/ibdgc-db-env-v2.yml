@@ -1,4 +1,4 @@
-name: Deploy Phil's python env to Amazon ECR
+name: Deploy ibdgc-db v2 python env to Amazon ECR
 
 on:
   push:
