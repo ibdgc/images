@@ -26,4 +26,3 @@ RUN pip install --no-cache-dir ibdgc-db/
 
 # Remove ibdgc-db directory
 RUN rm -rf ibdgc-db
-
