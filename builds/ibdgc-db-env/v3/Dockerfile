@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install \
   pkg-config \
   build-essential \
   gcc \
+  awscli \
   -y --no-install-recommends
 
 # Install any needed packages specified in requirements.txt
@@ -24,5 +25,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install the current repository as a Python package
 RUN pip install --no-cache-dir ibdgc-db/
 
-# Remove ibdgc-db directory
-RUN rm -rf ibdgc-db
