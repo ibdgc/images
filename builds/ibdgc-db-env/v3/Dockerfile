@@ -24,6 +24,3 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Install the current repository as a Python package
 RUN pip install --no-cache-dir ibdgc-db/
-
-# Remove ibdgc-db directory
-RUN rm -rf ibdgc-db
