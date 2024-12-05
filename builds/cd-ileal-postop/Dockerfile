@@ -4,14 +4,8 @@ FROM python:3.11-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy project contents into the container
+# Copy src code into the container
 # COPY ibdgc-db/ ibdgc-db
-# Before building:
-#     git clone git@github.com:ibdgc/cd-ileal-postop.git
-#     cd cd-ileal-postop
-#     dvc fetch
-#     dvc checkout
-COPY cd-ileal-postop/ cd-ileal-postop
 
 RUN apt-get update && apt-get install \
   git \
