@@ -20,4 +20,4 @@ RUN apt-get update && apt-get install \
 
 # Install dataforge from GitLab
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir "dataforge[redcap,frictionless] @ git+https://gitlab.com/pschumm/data-forge.git@45bf034c9fc2fee9161cc87f3d42deb3d30e4375"
+RUN pip install --no-cache-dir "dataforge[redcap,frictionless] @ git+https://gitlab.com/pschumm/data-forge.git@d2736266cc26c35f87a2145095c87120e1ec6395
